@@ -132,14 +132,29 @@ const getAverageChange = (data) => {
     return averageChange
 }
 
+// Currency formatter object
+const dollars = new Intl.NumberFormat(`en-US`, {
+    currency: `USD`,
+    style: 'currency',
+});
 
 // Main function
 const main = (data) => {
-    print(getNumberOfMonths(data))
-    print(getTotal(data))
-    print(getChanges(data)[0])
-    print(getMostProfitsAndLosses(getChanges(data)))
-    print(getAverageChange(data))
+    // print(getNumberOfMonths(data))
+    // print(getTotal(data))
+    // print(getChanges(data)[0])
+    // print(getMostProfitsAndLosses(getChanges(data)))
+    // print(getAverageChange(data))
+    let consoleOutput = 'Financial Analasys\n'
+    consoleOutput += '==========================\n\n'
+    consoleOutput += `Total Months: ${getNumberOfMonths(data)}\n`
+    consoleOutput += `Total: ${dollars.format(getTotal(data))}\n`
+    consoleOutput += `Average Change: ${getAverageChange(data)}\n`
+    consoleOutput += `Greatest increse in Profits: ${getMostProfitsAndLosses(getChanges(data)).losses[0]}.....`
+    consoleOutput += `(${dollars.format(getMostProfitsAndLosses(getChanges(data)).losses[1])})\n`
+    consoleOutput += `Greatest increase in Losses: ${getMostProfitsAndLosses(getChanges(data)).profits[0]}.....`
+    consoleOutput += `(${dollars.format(getMostProfitsAndLosses(getChanges(data)).profits[1])})`
+    print(consoleOutput)
 }
 
 // Call main with data

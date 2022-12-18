@@ -95,9 +95,20 @@ const getNumberOfMonths = (data) => {
     return data.length
 }
 
+// Get total
+const getTotal = (data) => {
+    let total = 0;
+    data.forEach((rec) => {
+        total += rec[1]
+    })
+    return total
+}
+
+
 // Main function
 const main = (data) => {
     print(getNumberOfMonths(data))
+    print(getTotal(data))
 }
 
 // Call main with data

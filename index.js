@@ -86,71 +86,11 @@ const finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099]
 ];
+
 // Binds console.log to print
-let print = console.log.bind(console);
+const print = console.log.bind(console);
 
-// Total number of months in dataset
-let totalNumberOfMonths = finances.length;
-
-/* Changes from month to month */
-// loop through finances array and build a new dataset with changes from month to month
-const getChanges = (data) => {
-    let changesMonthToMonth = []
-
-    for (let i = 0; i < finances.length - 1; i++) {
-        changesMonthToMonth.push([`${data[i][0]} - ${data[i + 1][0]}`, (data[i][1]) - (data[i + 1][1])])
-    }
-    return changesMonthToMonth
+// Get number of months in dataset
+const getNumberOfMonths = (data) => {
+    return data.length
 }
-
-/* Calculate Total */
-
-const getTotal = (arr) => {
-    let total = 0;
-    arr.forEach((rec) => {
-        total += rec[1]
-    })
-    return total
-}
-
-
-
-/* Net profit/losses */
-// Sums up all the changes from month to month
-// by grabbing each record and from new dataset
-let netProfitLosses = 0;
-getChanges(finances).forEach(function (record) {
-    netProfitLosses += record[1];
-})
-print(netProfitLosses / getChanges(finances).length)
-
-// Average of changes in profits/losses
-//var averageOfChangesInProfitLosses = netProfitLosses / totalNumberOfMonths;
-
-// Greatest increase in profit
-//var greatestIncreasInProfit = changesMonthToMonth.sort()[changesMonthToMonth.length - 1];
-
-// Greatest decrease in losses
-//var greatestDecreaseInLosses = changesMonthToMonth.sort()[0];
-
-//console.log(Math.floor(greatestDecreaseInLosses));
-
-
-
-// finances.forEach((line) => {
-//     if (line[0] === 'Sep-2013') {
-//         print(line);
-//     }
-// })
-
-// getChanges(finances).forEach(function (record) {
-//     if (record[1] === -1926159) {
-//         print(record);
-//     }
-// })
-
-print(getChanges(finances).sort())
-
-
-
-

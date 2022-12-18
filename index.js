@@ -147,22 +147,22 @@ const htmlOutput = (id, data) => {
 const main = (data) => {
     // Console output
     let consoleOutput = 'Financial Analasys\n'
-    consoleOutput += '==========================\n\n'
+    consoleOutput += '==========================\n'
     consoleOutput += `Total Months: ${getNumberOfMonths(data)}\n`
     consoleOutput += `Total: ${dollars.format(getTotal(data))}\n`
     consoleOutput += `Average Change: ${dollars.format(getAverageChange(data))}\n`
-    consoleOutput += `Greatest increse in Profits: ${getMostProfitsAndLosses(getChanges(data)).losses[0]}.....`
-    consoleOutput += `(${dollars.format(getMostProfitsAndLosses(getChanges(data)).losses[1])})\n`
-    consoleOutput += `Greatest increase in Losses: ${getMostProfitsAndLosses(getChanges(data)).profits[0]}.....`
-    consoleOutput += `(${dollars.format(getMostProfitsAndLosses(getChanges(data)).profits[1])})`
+    consoleOutput += `Greatest increse in Profits: ${getMostProfitsAndLosses(getChanges(data)).losses[0]} `
+    consoleOutput += `(${dollars.format(Math.abs(getMostProfitsAndLosses(getChanges(data)).losses[1]))})\n`
+    consoleOutput += `Greatest increase in Losses: ${getMostProfitsAndLosses(getChanges(data)).profits[0]} `
+    consoleOutput += `(-${dollars.format(getMostProfitsAndLosses(getChanges(data)).profits[1])})`
     print(consoleOutput)
 
     // HTML output
     htmlOutput('total-months', getNumberOfMonths(data))
     htmlOutput('total', dollars.format(getTotal(data)))
     htmlOutput('average-change', dollars.format(getAverageChange(data)))
-    htmlOutput('profits', dollars.format(getMostProfitsAndLosses(getChanges(data)).losses[1]))
-    htmlOutput('losses', dollars.format(getMostProfitsAndLosses(getChanges(data)).profits[1]))
+    htmlOutput('profits', `${dollars.format(Math.abs(getMostProfitsAndLosses(getChanges(data)).losses[1]))}`)
+    htmlOutput('losses', '-' + `${dollars.format(getMostProfitsAndLosses(getChanges(data)).profits[1])}`)
 }
 
 // Call main with data

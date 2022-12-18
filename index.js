@@ -94,3 +94,11 @@ const print = console.log.bind(console);
 const getNumberOfMonths = (data) => {
     return data.length
 }
+
+// Main function
+const main = (data) => {
+    print(getNumberOfMonths(data))
+}
+
+// Call main with data
+main(finances)

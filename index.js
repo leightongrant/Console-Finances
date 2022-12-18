@@ -104,11 +104,23 @@ const getTotal = (data) => {
     return total
 }
 
+// Get month to month changes
+const getChanges = (data) => {
+    let changesMonthToMonth = []
+
+    for (let i = 0; i < data.length - 1; i++) {
+        changesMonthToMonth.push([data[i + 1][0], (data[i][1]) - (data[i + 1][1])])
+    }
+    return changesMonthToMonth
+}
+
+
 
 // Main function
 const main = (data) => {
     print(getNumberOfMonths(data))
     print(getTotal(data))
+    print(getChanges(data)[0])
 }
 
 // Call main with data

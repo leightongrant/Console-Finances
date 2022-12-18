@@ -121,8 +121,16 @@ const getMostProfitsAndLosses = (data) => {
     return { profits: mostProfits, losses: mostLosses }
 }
 
-// Get average 
-
+// Get average  change
+const getAverageChange = (data) => {
+    let totalOfMonthToMonthChange = 0
+    getChanges(data).forEach((rec) => {
+        totalOfMonthToMonthChange += rec[1]
+    })
+    let numberOfMonths = getChanges(data).length
+    let averageChange = totalOfMonthToMonthChange / numberOfMonths
+    return averageChange
+}
 
 
 // Main function
@@ -131,6 +139,7 @@ const main = (data) => {
     print(getTotal(data))
     print(getChanges(data)[0])
     print(getMostProfitsAndLosses(getChanges(data)))
+    print(getAverageChange(data))
 }
 
 // Call main with data

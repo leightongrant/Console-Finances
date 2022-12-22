@@ -130,104 +130,23 @@ const analyzer = {
         return increase;
     }
 };
+
+// Console Output
 console.log('Financial Analysis');
 console.log('-------------------------');
-console.log('Total Months: ', analyzer.numberOfMonths)
-console.log('Total: ', analyzer.total)
-console.log('Average Change: ', analyzer.averageChange)
-console.log('Greatest Increase in Profits: ', analyzer.greatestIncreaseInProfits)
-console.log('Greatest Decrease in Profits: ', analyzer.greatestDecreaseInProfits)
+console.log('Total Months: ', analyzer.numberOfMonths);
+console.log('Total: ', analyzer.total);
+console.log('Average Change: ', analyzer.averageChange);
+console.log('Greatest Increase in Profits: ', analyzer.greatestIncreaseInProfits);
+console.log('Greatest Decrease in Profits: ', analyzer.greatestDecreaseInProfits);
 
 // HTML Output
 const htmlOutput = (id, data) => {
-    return document.getElementById(id).innerHTML = data
+    return document.getElementById(id).innerHTML = data;
 }
 
-htmlOutput('total-months', analyzer.numberOfMonths)
-htmlOutput('total', analyzer.total)
-htmlOutput('average-change', analyzer.averageChange)
-htmlOutput('profits', analyzer.greatestIncreaseInProfits)
-htmlOutput('losses', analyzer.greatestDecreaseInProfits)
-
-
-
-// // Binds console.log to print
-// const print = console.log.bind(console);
-
-// // Get number of months in dataset
-// const getNumberOfMonths = (data) => {
-//     return data.length
-// }
-
-// // Get total
-// const getTotal = (data) => {
-//     let total = 0;
-//     data.forEach((rec) => {
-//         total += rec[1]
-//     })
-//     return total
-// }
-
-// // Get month to month changes
-// const getChanges = (data) => {
-//     let changesMonthToMonth = []
-
-//     for (let i = 0; i < data.length - 1; i++) {
-//         changesMonthToMonth.push([data[i + 1][0], (data[i][1]) - (data[i + 1][1])])
-//     }
-//     return changesMonthToMonth
-// }
-
-// // Get most profits and most losses
-// const getMostProfitsAndLosses = (data) => {
-//     let mostProfits = data.sort((a, b) => { return a[1] - b[1] })[data.length - 1]
-//     let mostLosses = data.sort((a, b) => { return a[1] - b[1] })[0]
-//     return { profits: mostProfits, losses: mostLosses }
-// }
-
-// // Get average  change
-// const getAverageChange = (data) => {
-//     let totalOfMonthToMonthChange = 0
-//     getChanges(data).forEach((rec) => {
-//         totalOfMonthToMonthChange += rec[1]
-//     })
-//     let numberOfMonths = getChanges(data).length
-//     let averageChange = totalOfMonthToMonthChange / numberOfMonths
-//     return averageChange
-// }
-
-// // Currency formatter object
-// const dollars = new Intl.NumberFormat(`en-US`, {
-//     currency: `USD`,
-//     style: 'currency',
-// });
-
-// // HTML Output
-// const htmlOutput = (id, data) => {
-//     return document.getElementById(id).innerHTML = data
-// }
-
-// // Main function
-// const main = (data) => {
-//     // Console output
-//     let consoleOutput = 'Financial Analasys\n'
-//     consoleOutput += '==========================\n'
-//     consoleOutput += `Total Months: ${getNumberOfMonths(data)}\n`
-//     consoleOutput += `Total: ${dollars.format(getTotal(data))}\n`
-//     consoleOutput += `Average Change: ${dollars.format(getAverageChange(data))}\n`
-//     consoleOutput += `Greatest increse in Profits: ${getMostProfitsAndLosses(getChanges(data)).losses[0]} `
-//     consoleOutput += `(${dollars.format(Math.abs(getMostProfitsAndLosses(getChanges(data)).losses[1]))})\n`
-//     consoleOutput += `Greatest increase in Losses: ${getMostProfitsAndLosses(getChanges(data)).profits[0]} `
-//     consoleOutput += `(-${dollars.format(getMostProfitsAndLosses(getChanges(data)).profits[1])})`
-//     print(consoleOutput)
-
-//     // HTML output
-//     htmlOutput('total-months', getNumberOfMonths(data))
-//     htmlOutput('total', dollars.format(getTotal(data)))
-//     htmlOutput('average-change', dollars.format(getAverageChange(data)))
-//     htmlOutput('profits', `${dollars.format(Math.abs(getMostProfitsAndLosses(getChanges(data)).losses[1]))}`)
-//     htmlOutput('losses', '-' + `${dollars.format(getMostProfitsAndLosses(getChanges(data)).profits[1])}`)
-// }
-
-// // Call main with data
-// main(finances)
+htmlOutput('total-months', analyzer.numberOfMonths);
+htmlOutput('total', analyzer.total);
+htmlOutput('average-change', analyzer.averageChange);
+htmlOutput('profits', analyzer.greatestIncreaseInProfits);
+htmlOutput('losses', analyzer.greatestDecreaseInProfits);

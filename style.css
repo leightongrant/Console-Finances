@@ -2,3 +2,18 @@ table i {
     font-size: 25px;
     margin-right: 15px;
 }
+
+.hero {
+    background-image: url('images/business-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+}
+
+.jumbotron {
+    background: transparent;
+}
+
+main {
+    margin-top: 80px;
+}

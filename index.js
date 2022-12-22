@@ -99,8 +99,19 @@ const analyzer = {
 
         for (let i = 0; i < financesFromFeb.length; i++) {
             difference = [financesFromFeb[i][0], this.finances[i][1] - financesFromFeb[i][1]];
-            changesMonthToMonth.push(difference);
+
+            if (difference[1] === 0) {
+                changesMonthToMonth.push(difference);
+            } else if (difference[1] < 0) {
+                difference[1] = difference[1] + (Math.abs(difference[1]) * 2);
+                changesMonthToMonth.push(difference);
+            } else {
+                difference[1] = difference[1] - (difference[1] * 2);
+                changesMonthToMonth.push(difference);
+            }
+
             sumOfChanges += difference[1];
+
         }
 
         return [changesMonthToMonth, sumOfChanges]
@@ -131,6 +142,7 @@ const analyzer = {
     }
 };
 
+// console.log(analyzer.changes()[0])
 // Console Output
 console.log('Financial Analysis');
 console.log('-------------------------');

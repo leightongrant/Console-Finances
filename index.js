@@ -1,5 +1,5 @@
 // Imports
-import finances from "../modules/data.js";
+import finances from "./modules/data.js";
 
 // Object
 const analyzer = {

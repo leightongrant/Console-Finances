@@ -33,49 +33,48 @@ const analyzer = {
 
         return [changesMonthToMonth, sumOfChanges]
     },
-    get numberOfMonths() {
+    getNumberOfMonths() {
         return this.finances.length
     },
-    get total() {
+    getTotal() {
         let sum = 0;
         this.finances.forEach((record) => {
             sum += record[1];
         })
         return this.dollars.format(sum);
     },
-    get averageChange() {
+    getAverageChange() {
         let avrChng = this.changes()[1] / this.changes()[0].length;
         return this.dollars.format(avrChng);
     },
-    get greatestDecreaseInProfits() {
+    getGreatestDecreaseInProfits() {
         let firstVal = this.changes()[0].sort((a, b) => a[1] - b[1])[0];
         let decrease = `${firstVal[0]} (${this.dollars.format(firstVal[1])})`;
         return decrease;
     },
-    get greatestIncreaseInProfits() {
+    getGreatestIncreaseInProfits() {
         let lastVal = this.changes()[0].sort((a, b) => a[1] - b[1])[this.changes()[0].length - 1];
         let increase = `${lastVal[0]} (${this.dollars.format(lastVal[1])})`;
         return increase;
     }
 };
 
-// console.log(analyzer.changes()[0])
 // Console Output
 console.log('Financial Analysis');
 console.log('-------------------------');
-console.log('Total Months: ', analyzer.numberOfMonths);
-console.log('Total: ', analyzer.total);
-console.log('Average Change: ', analyzer.averageChange);
-console.log('Greatest Increase in Profits: ', analyzer.greatestIncreaseInProfits);
-console.log('Greatest Decrease in Profits: ', analyzer.greatestDecreaseInProfits);
+console.log('Total Months: ', analyzer.getNumberOfMonths());
+console.log('Total: ', analyzer.getTotal());
+console.log('Average Change: ', analyzer.getAverageChange());
+console.log('Greatest Increase in Profits: ', analyzer.getGreatestIncreaseInProfits());
+console.log('Greatest Decrease in Profits: ', analyzer.getGreatestDecreaseInProfits());
 
 // HTML Output
 const htmlOutput = (id, data) => {
-    return document.getElementById(id).innerHTML = data;
+    return document.getElementById(id).innerText = data;
 }
 
-htmlOutput('total-months', analyzer.numberOfMonths);
-htmlOutput('total', analyzer.total);
-htmlOutput('average-change', analyzer.averageChange);
-htmlOutput('profits', analyzer.greatestIncreaseInProfits);
-htmlOutput('losses', analyzer.greatestDecreaseInProfits);
+htmlOutput('total-months', analyzer.getNumberOfMonths());
+htmlOutput('total', analyzer.getTotal());
+htmlOutput('average-change', analyzer.getAverageChange());
+htmlOutput('profits', analyzer.getGreatestIncreaseInProfits());
+htmlOutput('losses', analyzer.getGreatestDecreaseInProfits());

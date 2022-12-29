@@ -71,7 +71,7 @@ tbody td {
     padding: 100px 0;
     background-color: var(--light-gold);
     margin-top: -40px;
-    border-top: 7px solid var(--orange);
+    border-top: 7px solid var(--dark-gray);
     height: 70vh;
     display: flex;
     flex-direction: column;

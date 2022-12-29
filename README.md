@@ -2,7 +2,7 @@
 
 ## Description
 
-Using JavaScript the concepts to create a financial analysis tool.
+Using JavaScript concepts to create a financial analysis tool.
 
 
 ## Installation
@@ -13,7 +13,7 @@ N/A
 
 Use F12 or right click on page to inspect and view console output.
 
-![alt screenshot](./images/screenshot.png)
+![alt screenshot](./images/Screenshot.png)
 
 ## Credits
 

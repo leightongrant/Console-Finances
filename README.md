@@ -13,6 +13,8 @@ N/A
 
 Use F12 or right click on page to inspect and view console output.
 
+## Screenshot
+
 ![alt screenshot](./images/Screenshot.png)
 
 ## Credits

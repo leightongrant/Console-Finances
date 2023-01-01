@@ -72,7 +72,7 @@ tbody td {
     background-color: var(--light-gold);
     margin-top: -40px;
     border-top: 7px solid var(--dark-gray);
-    height: 70vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,3 +84,6 @@ tbody td {
     color: var(--light-gray);
 
 }
+
+/* Media Queries */
+@media screen and (max-width: 786px) {}

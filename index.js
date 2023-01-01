@@ -31,7 +31,7 @@ const analyzer = {
 
         }
 
-        return [changesMonthToMonth, sumOfChanges]
+        return [changesMonthToMonth.sort((a, b) => a[1] - b[1]), sumOfChanges];
     },
     getNumberOfMonths() {
         return this.finances.length
@@ -48,12 +48,12 @@ const analyzer = {
         return this.dollars.format(avrChng);
     },
     getGreatestDecreaseInProfits() {
-        let firstVal = this.changes()[0].sort((a, b) => a[1] - b[1])[0];
+        let firstVal = this.changes()[0][0];
         let decrease = `${firstVal[0]} (${this.dollars.format(firstVal[1])})`;
         return decrease;
     },
     getGreatestIncreaseInProfits() {
-        let lastVal = this.changes()[0].sort((a, b) => a[1] - b[1])[this.changes()[0].length - 1];
+        let lastVal = this.changes()[0][this.changes()[0].length - 1];
         let increase = `${lastVal[0]} (${this.dollars.format(lastVal[1])})`;
         return increase;
     }

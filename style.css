@@ -86,4 +86,9 @@ tbody td {
 }
 
 /* Media Queries */
-@media screen and (max-width: 786px) {}
+@media screen and (max-width: 576px) {
+    #analysis tbody>tr {
+        display: flex;
+        flex-direction: column;
+    }
+}
